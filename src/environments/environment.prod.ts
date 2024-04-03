@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiUrl: 'https://yasminmani0802.github.io/my-arts-frontend/'
+  apiUrl: 'https://git.heroku.com/my-arts-backend.git'
 
 };
