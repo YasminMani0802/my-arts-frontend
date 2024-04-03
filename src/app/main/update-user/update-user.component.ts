@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/main/http.service';
 import { UtilityService } from 'src/app/utility.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-update-user',
@@ -35,7 +36,7 @@ export class UpdateUserComponent {
   form: FormGroup;
   user: any;
   userImage: string | null = this.utility.loggedInUser.userImage;
-
+  public url = environment.apiUrl;
 
 
 

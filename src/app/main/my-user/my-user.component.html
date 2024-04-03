@@ -4,8 +4,7 @@
     <div class="column card box is-half" *ngIf="user">
       <div class="card-image">
         <figure class="image is-4by3">
-          <img class="userImage" [src]="'http://localhost:3000' + user.imagePath" [alt]='user.fullName'
-            style="border-radius: 50%;">
+          <img class="userImage" [src]="url + user.imagePath" [alt]='user.fullName' style="border-radius: 50%;">
         </figure>
       </div>
 

@@ -3,6 +3,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/main/http.service';
 import { UtilityService } from 'src/app/utility.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-update-product',
@@ -34,6 +35,7 @@ export class UpdateProductComponent {
   typePrice: string;
   totalPrice: string;
   form: FormGroup;
+  public url = environment.apiUrl;
 
   get name() {
     return this.form.get('name');

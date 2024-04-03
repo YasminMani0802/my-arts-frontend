@@ -59,7 +59,7 @@
             </label>
           </div>
           <div *ngIf="imagePath">
-            <img [src]="'http://localhost:3000' + imagePath" [alt]="form.value.name" />
+            <img [src]="url + imagePath" [alt]="form.value.name" />
 
           </div>
         </div>

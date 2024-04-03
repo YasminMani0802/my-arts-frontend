@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/main/http.service';
 import { UtilityService } from 'src/app/utility.service';
 import { User } from '../user.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-my-user',
@@ -11,6 +12,7 @@ import { User } from '../user.interface';
 })
 export class MyUserComponent {
   user: User;
+  public url = environment.apiUrl;
   constructor(private http: HttpService, private router: Router, private utility: UtilityService) {
 
     const sub = this.http.get<User>('users/full-user-by-id').subscribe({

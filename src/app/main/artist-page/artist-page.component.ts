@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { HttpService } from '../http.service';
 import { Product } from '../product.interface';
 import { User } from '../user.interface';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-artist-page',
@@ -27,13 +28,14 @@ export class ArtistPageComponent {
       error: (res) => console.log(res.error)
     })
   }
-  ngOnInit() {
 
-  }
+  ngOnInit() { }
 
   user: User;
   artistProducts: Product[] = [];
   searchVal: string = '';
+  public url = environment.apiUrl;
+
 
   addToFavourites(product_id: string) {
     const sub = this.http.post<Product[]>(`products/add-to-favourites`, { product_id }).subscribe({

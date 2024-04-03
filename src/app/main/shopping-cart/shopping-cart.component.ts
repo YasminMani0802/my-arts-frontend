@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 import { HttpService } from 'src/app/main/http.service';
 import { UtilityService } from 'src/app/utility.service';
 import { Product } from '../product.interface';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-shopping-cart',
@@ -12,6 +14,7 @@ import { Product } from '../product.interface';
 export class ShoppingCartComponent {
   shoppingCart: Product[] = [];
   searchVal: string = '';
+  public url = environment.apiUrl;
 
   constructor(private http: HttpService, public utility: UtilityService, private router: Router) { }
 

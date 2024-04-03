@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from 'src/app/main/http.service';
 import { UtilityService } from 'src/app/utility.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-add-product',
@@ -22,6 +24,8 @@ export class AddProductComponent {
   imagePath: string | null = null;
 
   form: FormGroup;
+  public url = environment.apiUrl;
+
 
   get name() {
     return this.form.get('name');

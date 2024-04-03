@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HttpService } from '../../main/http.service';
 import { UtilityService } from '../../utility.service';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-register',
@@ -16,6 +18,8 @@ export class RegisterComponent implements OnInit {
   }
   errorMessage: string = '';
   imagePath: string | null = null;
+  public url = environment.apiUrl;
+
 
   regexPatterns: any = [
     { phone: /^\+?[0-9]{3}[ -]?[0-9]{6,12}$/ },

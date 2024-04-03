@@ -17,7 +17,7 @@
         <div class="card">
           <div class="card-image">
             <figure class="image is-4by3">
-              <img [src]="'http://localhost:3000' + product.imagePath" [alt]='product.name'>
+              <img [src]="url + product.imagePath" [alt]='product.name'>
             </figure>
           </div>
 
@@ -29,8 +29,7 @@
               <div class="media columns is-vcentered">
                 <div class="media-left column is-one-quarter" style="padding-right: 0;">
                   <figure class="image is-48x48" style="height:auto;" (click)="goToArtistPage(product.artistName)">
-                    <img [src]="'http://localhost:3000' + product.userImage" [alt]='product.artistName'
-                      class="is-rounded">
+                    <img [src]="url + product.userImage" [alt]='product.artistName' class="is-rounded">
                   </figure>
                 </div>
                 <div class="media-content column" style="padding-left: 0;">
