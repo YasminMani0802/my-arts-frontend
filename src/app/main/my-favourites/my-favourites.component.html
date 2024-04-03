@@ -1,0 +1,58 @@
+<p *ngIf="myFavourites.length == 0" class="has-text-centered">There are no favourites products</p>
+
+<div class="container" *ngIf="myFavourites.length > 0">
+  <div class="columns is-centered is-mobile">
+    <div class="column is-4-desktop is-6-tablet is-8-mobile">
+      <input type="search" [(ngModel)]="searchVal" placeholder="search" class="input">
+    </div>
+  </div>
+</div>
+
+
+
+<section class="section" *ngIf="myFavourites.length > 0">
+  <div class="container">
+    <div class="columns has-text-centered is-centered products">
+      <div class="column is-3-desktop is-3-tablet" *ngFor="let product of myFavourites | search : searchVal;">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img [src]="'http://localhost:3000' + product.imagePath" [alt]='product.name'>
+            </figure>
+          </div>
+
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">{{product.name}}</p>
+              <p>{{product.price}}</p>
+
+              <div class="media columns is-vcentered">
+                <div class="media-left column is-one-quarter" style="padding-right: 0;">
+                  <figure class="image is-48x48" style="height:auto;" (click)="goToArtistPage(product.artistName)">
+                    <img [src]="'http://localhost:3000' + product.userImage" [alt]='product.artistName'
+                      class="is-rounded">
+                  </figure>
+                </div>
+                <div class="media-content column" style="padding-left: 0;">
+                  <a class="title is-6" (click)="goToArtistPage(product.artistName)">{{product.artistName}}</a>
+                </div>
+              </div>
+
+              <p>{{product.description}}</p>
+            </div>
+          </div>
+
+
+
+          <div class="card">
+            <footer class="card-footer">
+              <a (click)="removeFromFavourites(product._id)" class="card-footer-item"
+                title="Remove from your favourites"><i class="fa-solid fa-star"></i></a>
+            </footer>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

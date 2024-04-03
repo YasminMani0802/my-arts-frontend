@@ -1,0 +1,19 @@
+.container {
+  margin-top: 3%;
+}
+
+.container .column {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.container .column .card-image {
+  width: 20vw;
+  height: auto;
+  margin: 0 auto;
+}
+
+.container .column .title {
+  margin-top: 5%;
+}
+/*# sourceMappingURL=artist-page.component.css.map */

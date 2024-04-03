@@ -1,0 +1,41 @@
+<div class="container" [formGroup]="form">
+  <div class="columns is-centered">
+    <div class="box column is-one-third">
+      <h2 class="title has-text-centered is-fullheight">Login</h2>
+
+      <div class="field">
+        <label class="label">*Email:</label>
+        <div class="control">
+          <input class="input" type="text" formControlName="email">
+          <span *ngIf="email && email.invalid && email.touched" class="help is-danger">Invaild email</span>
+
+        </div>
+      </div>
+
+
+      <div class="field">
+        <label class="label">*Password:</label>
+        <div class="control">
+          <input class="input" type="password" formControlName="password">
+          <span *ngIf="password && password.invalid && password.touched" class="help is-danger">Invaild password</span>
+        </div>
+
+      </div>
+
+      <div>
+        <a routerLink="../forgot-password">Forgot your password?</a>
+      </div>
+
+      <span class="help is-danger" id="errorRes" style="display:none;">Incorrect email or
+        password</span>
+
+
+      <div class="field rows" (click)="login()">
+        <div class="control">
+          <button class="button is-link is-fullwidth" [disabled]="!form.valid">Login</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

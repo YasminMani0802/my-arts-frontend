@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,SAAS,CAAA;EACL,SAAS,EAAE,MAAM;EACjB,OAAO,EAAE,GAAG;EACZ,UAAU,EAAE,MAAM;CACrB",
+    "sources": [
+        "update-user.component.scss"
+    ],
+    "names": [],
+    "file": "update-user.component.css"
+}

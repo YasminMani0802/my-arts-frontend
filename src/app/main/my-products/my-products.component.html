@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="columns is-centered is-mobile">
+    <div class="column is-4-desktop is-6-tablet is-8-mobile">
+
+    </div>
+    <div class="column is-4-desktop is-6-tablet is-8-mobile">
+      <input type="search" [(ngModel)]="searchVal" placeholder="search" class="input" *ngIf="myProducts.length > 0">
+    </div>
+    <div class="column is-4-desktop is-6-tablet is-8-mobile is-one-quarter"
+      *ngIf="(utility .isLoggedIn$ | async) && (utility.isArtist)">
+      <button routerLink="add" class="button is-fullwidth">Add Product
+      </button>
+
+    </div>
+
+  </div>
+</div>
+
+
+<section class="section">
+  <div class="container">
+    <p *ngIf="myProducts.length == 0" class="has-text-centered">There are no products</p>
+    <div class="columns has-text-centered is-centered products" *ngIf="myProducts.length > 0">
+      <div class="column is-3-desktop is-3-tablet" *ngFor="let product of myProducts | search : searchVal;">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img [src]="'http://localhost:3000' + product.imagePath" [alt]='product.name'>
+            </figure>
+          </div>
+
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">{{product.name}}</p>
+              <p>{{product.price}}</p>
+              <p>{{product.description}}</p>
+            </div>
+          </div>
+
+
+          <div class="card">
+            <footer class="card-footer">
+              <a (click)="handleDelete(product._id)" class="card-footer-item" title="Delete"><i
+                  class="fa-sharp fa-solid fa-trash"></i></a>
+              <a (click)="handleUpdate(product)" class="card-footer-item" title="Edit"><i
+                  class="fa-solid fa-pen-to-square"></i></a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

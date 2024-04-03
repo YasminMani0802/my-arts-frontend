@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,UAAU,CAAA;EACN,UAAU,EAAE,EAAE;CAcjB;;AAfD,AAEI,UAFM,CAEN,OAAO,CAAA;EACH,UAAU,EAAE,IAAI;CAWnB;;AAdL,AAKY,UALF,CAEN,OAAO,CAGC,WAAW,CAAA;EACP,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,MAAM;CACjB;;AATb,AAUY,UAVF,CAEN,OAAO,CAQC,MAAM,CAAA;EACF,UAAU,EAAE,EAAE;CACjB",
+    "sources": [
+        "artist-page.component.scss"
+    ],
+    "names": [],
+    "file": "artist-page.component.css"
+}

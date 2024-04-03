@@ -1,0 +1,9 @@
+.navbar {
+  margin-bottom: 7vh;
+  background-color: rgba(186, 25, 78, 0.416);
+}
+
+.active {
+  background-color: #fff;
+}
+/*# sourceMappingURL=navbar.component.css.map */

@@ -1,0 +1,112 @@
+<p *ngIf="shoppingCart.length == 0" class="has-text-centered">Shopping cart is empty</p>
+
+<section class="cart-container section" *ngIf="shoppingCart.length > 0">
+  <h1 class="title is-1 has-text-centered" style="margin-bottom: 50;">My Shopping Cart</h1>
+
+
+
+  <div class="container cart-form columns" *ngFor="let product of shoppingCart">
+    <div class="column is-two-thirds container cart-summary">
+      <div class="box">
+        <article class="media">
+          <div class="media-left">
+            <figure class="image is-128x128">
+              <img [src]="'http://localhost:3000' + product.imagePath" [alt]='product.name'>
+            </figure>
+          </div>
+          <div class="media-content">
+            <div class="content">
+              <p class="title is-5">{{product.name}}</p>
+              <div class="media columns">
+                <div class="column is-one-third columns is-vcentered">
+                  <div class="media-left column is-one-quarter" style="margin: 0;">
+                    <figure class="image is-32x32" style="height:auto; margin-left: 0; cursor: pointer;"
+                      (click)="goToArtistPage(product.artistName)">
+                      <img [src]="'http://localhost:3000' + product.userImage" [alt]='product.artistName'
+                        class="is-rounded">
+                    </figure>
+                  </div>
+
+                  <div class="media-content column" style="padding-left: 0;">
+                    <p (click)="goToArtistPage(product.artistName)">{{product.artistName}}</p>
+                  </div>
+                </div>
+              </div>
+
+              <p>{{product.price}}</p>
+
+              <p>{{product.description}}</p>
+            </div>
+
+            <nav class="level is-mobile">
+              <div class="level-left">
+                <a class="level-item" aria-label="reply">
+                  <span class="icon is-small">
+                    <i class="fas fa-reply" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a class="level-item" aria-label="retweet">
+                  <span class="icon is-small">
+                    <i class="fas fa-retweet" aria-hidden="true"></i>
+                  </span>
+                </a>
+                <a class="level-item" aria-label="like">
+                  <span class="icon is-small">
+                    <i class="fas fa-heart" aria-hidden="true"></i>
+                  </span>
+                </a>
+              </div>
+            </nav>
+          </div>
+        </article>
+      </div>
+    </div>
+
+
+    <div class="column is-half columns has-text-centered is-centered products">
+      <div class="column is-3-desktop is-3-tablet" *ngFor="let product of shoppingCart">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image is-4by3">
+              <img [src]="'http://localhost:3000' + product.imagePath" [alt]='product.name'>
+            </figure>
+          </div>
+
+          <div class="card-content">
+            <div class="content">
+              <p class="title is-4">{{product.name}}</p>
+              <p>{{product.price}}</p>
+
+              <div class="media columns is-vcentered">
+                <div class="media-left column is-one-quarter" style="padding-right: 0;">
+                  <figure class="image is-48x48" style="height:auto;" (click)="goToArtistPage(product.artistName)">
+                    <a (click)="goToArtistPage(product.artistName)">
+                      <img [src]="'http://localhost:3000' + product.userImage" [alt]='product.artistName'
+                        style=" border-radius: 50%; display: block;"></a>
+                  </figure>
+                </div>
+                <div class="media-content column" style="padding-left: 0;">
+                  <a class="title is-6" (click)="goToArtistPage(product.artistName)">{{product.artistName}}</a>
+                </div>
+              </div>
+
+              <p>{{product.description}}</p>
+            </div>
+          </div>
+
+
+
+          <div class="card">
+            <footer class="card-footer">
+              <a (click)="removeFromShoppingCart(product._id)" class="card-footer-item"
+                title="Remove from your shopping cart"><i class="fa-solid fa-cart-shopping"></i>&nbsp; Remove</a>
+            </footer>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</section>
