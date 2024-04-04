@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, ParamMap } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 import { UtilityService } from './utility.service';
